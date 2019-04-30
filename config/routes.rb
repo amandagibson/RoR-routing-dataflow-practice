@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   namespace :admin do
   get 'dashboard/main'
   get 'dashboard/user'
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :posts
 
   get 'posts/*missing', to: 'posts#missing'
+  get 'query/:something/:another_one', to: 'pages#somethingelse'
 
   root to: 'pages#home'
 end
